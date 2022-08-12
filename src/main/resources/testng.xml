@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium Starter suite">
+  <test name="OrangeHRM test">
+    <classes>
+      <class name="com.seleniumstarter.qa.testcases.LoginPageTest"/>
+      <class name="com.seleniumstarter.qa.testcases.DashBoardPageTest"/>
+    </classes>
+  </test>
+</suite>
