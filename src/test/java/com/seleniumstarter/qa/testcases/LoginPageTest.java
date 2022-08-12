@@ -9,40 +9,57 @@ import com.seleniumstarter.qa.base.TestBase;
 import com.seleniumstarter.qa.pages.DashBoardPage;
 import com.seleniumstarter.qa.pages.LoginPage;
 
+/**
+ * @author Timothy Mwine
+ * @date   12th August 2022
+ */
 public class LoginPageTest extends TestBase {
-    
-    LoginPage loginPage;
-    DashBoardPage dashBoardPage;
-    
+
+    private LoginPage loginPage;
+    private DashBoardPage dashBoardPage;
+
     public LoginPageTest() {
+
         super();
     }
-    
+
+
     @BeforeMethod
     public void setUp() {
+
         initialization();
         loginPage = new LoginPage();
     }
-    
-    @Test(priority=1)
+
+
+    @Test( priority = 1 )
     public void validatePageTitleTest() {
+
         String title = loginPage.validateLoginPageTitle();
-        Assert.assertEquals(title, "OrangeHRM");
+        Assert.assertEquals( title, "OrangeHRM" );
     }
-    
-    @Test(priority=2)
+
+
+    @Test( priority = 2 )
     public void orangeLogoTest() {
+
         boolean orangelogo = loginPage.validateOrangeLogo();
-        Assert.assertTrue(orangelogo);
+        Assert.assertTrue( orangelogo );
     }
-    
-    @Test(priority=3)
+
+
+    @Test( priority = 3 )
     public void loginTest() {
-        dashBoardPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+
+        String username = prop.getProperty( "username" );
+        String password = prop.getProperty( "password" );
+        dashBoardPage = loginPage.login( username, password );
     }
-    
+
+
     @AfterMethod
     public void tearDown() {
+
         driver.quit();
     }
 }

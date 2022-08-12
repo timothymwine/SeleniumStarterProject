@@ -7,6 +7,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.seleniumstarter.qa.base.TestBase;
 
+/**
+ * @author Timothy Mwine
+ * @date   12th August 2022
+ */
 public class AssignLeavePage extends TestBase {
 
     Select select;
@@ -41,9 +45,9 @@ public class AssignLeavePage extends TestBase {
     }
 
 
-    public void clickAndInputEmployeeName( String emp_name ) {
+    public void clickAndInputEmployeeName( String empName ) {
 
-        inputEmployeeName.sendKeys( emp_name );
+        inputEmployeeName.sendKeys( empName );
     }
 
 
