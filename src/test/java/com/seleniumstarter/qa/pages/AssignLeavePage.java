@@ -8,39 +8,42 @@ import org.openqa.selenium.support.ui.Select;
 import com.seleniumstarter.qa.base.TestBase;
 
 public class AssignLeavePage extends TestBase {
-    
+
     Select select;
-    
-    @FindBy (xpath = "//input[@id='assignleave_txtEmployee_empName']")
+
+    @FindBy( xpath = "//input[@id='assignleave_txtEmployee_empName']" )
     WebElement inputEmployeeName;
-    
-    @FindBy (id = "assignleave_txtLeaveType")
+
+    @FindBy( id = "assignleave_txtLeaveType" )
     WebElement selectLeaveType;
-    
-    @FindBy ( id = "assignleave_txtFromDate")
+
+    @FindBy( id = "assignleave_txtFromDate" )
     WebElement inputFromDate;
-    
-    @FindBy ( id = "assignleave_txtToDate" )
+
+    @FindBy( id = "assignleave_txtToDate" )
     WebElement inputToDate;
-    
-    @FindBy ( id = "assignleave_txtComment")
+
+    @FindBy( id = "assignleave_txtComment" )
     WebElement textAreaComment;
-    
-    @FindBy ( id = "assignleave_partialDays")
+
+    @FindBy( id = "assignleave_partialDays" )
     WebElement selectPartialDays;
-    
-    @FindBy ( id = "assignBtn")
+
+    @FindBy( id = "assignBtn" )
     WebElement inputAssignButton;
-    
-    @FindBy ( xpath = "//input[@id='confirmOkButton']")
+
+    @FindBy( xpath = "//input[@id='confirmOkButton']" )
     WebElement inputConfirmLeaveAssignOk;
-    
-    public AssignLeavePage () {
-        PageFactory.initElements( driver, this);
+
+    public AssignLeavePage() {
+
+        PageFactory.initElements( driver, this );
     }
-    
-    public void clickAndInputEmployeeName (String emp_name) {
-        inputEmployeeName.sendKeys(emp_name);
+
+
+    public void clickAndInputEmployeeName( String empName ) {
+
+        inputEmployeeName.sendKeys( empName );
     }
 
 
