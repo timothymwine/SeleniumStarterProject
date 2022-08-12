@@ -10,6 +10,10 @@ import com.seleniumstarter.qa.pages.DashBoardPage;
 import com.seleniumstarter.qa.pages.LoginPage;
 import com.seleniumstarter.qa.pages.ViewSystemUserPage;
 
+/**
+ * @author Timothy Mwine
+ * @date   12th August 2022
+ */
 public class DashBoardPageTest extends TestBase {
 
     private LoginPage loginPage;

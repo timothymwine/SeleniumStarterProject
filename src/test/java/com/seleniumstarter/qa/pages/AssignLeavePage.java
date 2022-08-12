@@ -7,6 +7,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.seleniumstarter.qa.base.TestBase;
 
+/**
+ * @author Timothy Mwine
+ * @date   12th August 2022
+ */
 public class AssignLeavePage extends TestBase {
 
     Select select;

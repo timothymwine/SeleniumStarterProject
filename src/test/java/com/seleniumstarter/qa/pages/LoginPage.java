@@ -6,6 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.seleniumstarter.qa.base.TestBase;
 
+/**
+ * @author Timothy Mwine
+ * @date   12th August 2022
+ */
 public class LoginPage extends TestBase {
 
     // we will use page factory to locate the elements and store them in this OR

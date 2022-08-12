@@ -6,6 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.seleniumstarter.qa.base.TestBase;
 
+/**
+ * @author Timothy Mwine
+ * @date   12th August 2022
+ */
 public class DashBoardPage extends TestBase {
 
     @FindBy( xpath = "//a[@id='menu_dashboard_index']" )

@@ -9,6 +9,10 @@ import com.seleniumstarter.qa.base.TestBase;
 import com.seleniumstarter.qa.pages.DashBoardPage;
 import com.seleniumstarter.qa.pages.LoginPage;
 
+/**
+ * @author Timothy Mwine
+ * @date   12th August 2022
+ */
 public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;

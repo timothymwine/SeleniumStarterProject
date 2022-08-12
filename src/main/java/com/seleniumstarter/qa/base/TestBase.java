@@ -15,6 +15,10 @@ import com.seleniumstarter.qa.util.TestUtil;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+/**
+ * @author Timothy Mwine
+ * @date   12th August 2022
+ */
 public class TestBase {
 
     public static Properties prop;
