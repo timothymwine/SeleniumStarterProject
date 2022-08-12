@@ -1,7 +1,6 @@
 package com.seleniumstarter.qa.base;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -34,47 +33,49 @@ public class TestBase {
             
             prop.load(ip);
             
-        } catch (FileNotFoundException e) {
+        }
+        catch ( IOException e ) {
             
-            e.printStackTrace();
-        }catch (IOException e) {
-            
-            e.printStackTrace();
+            throw new RuntimeException( "Error Reading properties", e );
         }
     }
-    //method to initialize the browser
+
+
+    // method to initialize the browser
     public static void initialization() {
-       String browserName = prop.getProperty("browser");
+
+        String browserName = prop.getProperty( "browser" );
        
-       if (browserName.equalsIgnoreCase("chrome")) {
+        if ( browserName.equalsIgnoreCase( "chrome" ) ) {
            
-           WebDriverManager.chromedriver().setup();
-           driver = new ChromeDriver();
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+        else if ( browserName.equalsIgnoreCase( "firefox" ) ) {
            
-       }
-       else if (browserName.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+        else if ( browserName.equalsIgnoreCase( "safari" ) ) {
            
-           WebDriverManager.firefoxdriver().setup();
-           driver = new FirefoxDriver();
-       }
-       else if (browserName.equalsIgnoreCase("safari")) {
-           
-           WebDriverManager.safaridriver().setup();
-           driver = new SafariDriver();
-       }
-       else if (browserName.equalsIgnoreCase("edge")) {
-           WebDriverManager.edgedriver().setup();
-           driver = new EdgeDriver();
-       }
-       else {
-           System.out.println("Invalid browser name");
-       }
+            WebDriverManager.safaridriver().setup();
+            driver = new SafariDriver();
+        }
+        else if ( browserName.equalsIgnoreCase( "edge" ) ) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
+        else {
+            throw new RuntimeException( "Invalid browser name" );
+        }
        
-       driver.manage().window().maximize();
-       driver.manage().deleteAllCookies();
-       driver.manage().timeouts().pageLoadTimeout( Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
-       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
-       
-       driver.get(prop.getProperty("url"));
-       }
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+
+        driver.manage().timeouts().pageLoadTimeout( Duration.ofSeconds(
+                TestUtil.PAGE_LOAD_TIMEOUT ) );
+
+        driver.manage().timeouts().implicitlyWait( Duration.ofSeconds( TestUtil.IMPLICIT_WAIT ) );
+        driver.get( prop.getProperty( "url" ) );
+    }
 }

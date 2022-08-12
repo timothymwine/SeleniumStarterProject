@@ -42,23 +42,16 @@ public class AssignLeavePage extends TestBase {
     public void clickAndInputEmployeeName (String emp_name) {
         inputEmployeeName.sendKeys(emp_name);
     }
-    public void clickOnSelectLeaveType (String leaveType, String fromDate, String toDate, String partialDays) {
-    select = new Select (selectLeaveType );
-    select.selectByVisibleText(leaveType);
-    inputFromDate.sendKeys( fromDate);
-    inputToDate.sendKeys( toDate );
-    select =new Select(selectPartialDays);
-    select.selectByVisibleText(partialDays);
-    
-    
+
+
+    public void clickOnSelectLeaveType( String leaveType, String fromDate, String toDate,
+            String partialDays ) {
+
+        select = new Select( selectLeaveType );
+        select.selectByVisibleText( leaveType );
+        inputFromDate.sendKeys( fromDate );
+        inputToDate.sendKeys( toDate );
+        select = new Select( selectPartialDays );
+        select.selectByVisibleText( partialDays );
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

@@ -3,6 +3,7 @@ package com.seleniumstarter.qa.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import com.seleniumstarter.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
@@ -31,23 +32,29 @@ public class LoginPage extends TestBase {
     
     //initialising the login page objects
     public LoginPage() {
-    PageFactory.initElements( driver, this );
+
+        PageFactory.initElements( driver, this );
     }
     
     // action to validate login page title
     public String validateLoginPageTitle() {
-    return driver.getTitle();
+
+        return driver.getTitle();
     }
     
     //validating if the logo is present
     public boolean validateOrangeLogo() {
-    return orangeLogo.isDisplayed();
+
+        return orangeLogo.isDisplayed();
     }
+
+
     //method to login user
     public DashBoardPage login(String usr, String pssd) {
-    inputUserName.sendKeys(usr);
-    inputPassword.sendKeys(pssd);
-    btnSubmit.click();
-    return new DashBoardPage();
+
+        inputUserName.sendKeys( usr );
+        inputPassword.sendKeys( pssd );
+        btnSubmit.click();
+        return new DashBoardPage();
     }
 }

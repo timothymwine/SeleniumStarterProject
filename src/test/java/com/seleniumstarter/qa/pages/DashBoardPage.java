@@ -32,10 +32,11 @@ public class DashBoardPage extends TestBase {
     //initialising the dashboard page objects
     public DashBoardPage() {
     
-    PageFactory.initElements(driver, this);
+        PageFactory.initElements( driver, this );
     }
     
     public String validateLoginPageTitle() {
+
         return driver.getTitle();
     }
     
