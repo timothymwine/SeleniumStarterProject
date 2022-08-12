@@ -45,28 +45,35 @@ public class TestBase {
     public static void initialization() {
 
         String browserName = prop.getProperty( "browser" );
-       
-        if ( browserName.equalsIgnoreCase( "chrome" ) ) {
+
+        switch ( browserName ) {
+
+            case "chrome":
+
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                break;
+
+            case "firefox":
            
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        }
-        else if ( browserName.equalsIgnoreCase( "firefox" ) ) {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+                break;
+
+            case "safari":
            
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        }
-        else if ( browserName.equalsIgnoreCase( "safari" ) ) {
-           
-            WebDriverManager.safaridriver().setup();
-            driver = new SafariDriver();
-        }
-        else if ( browserName.equalsIgnoreCase( "edge" ) ) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-        }
-        else {
-            throw new RuntimeException( "Invalid browser name" );
+                WebDriverManager.safaridriver().setup();
+                driver = new SafariDriver();
+                break;
+
+            case "edge":
+
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+                break;
+
+            default:
+                throw new RuntimeException( "Invalid browser name" );
         }
        
         driver.manage().window().maximize();
