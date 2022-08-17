@@ -33,6 +33,9 @@ public class DashBoardPage extends TestBase {
     @FindBy( xpath = "//span[text()='Assign Leave']//parent::a" )
     WebElement linkAssignLeave;
 
+    @FindBy( id = "menu_pim_viewPimModule" )
+    WebElement linkPim;
+
     //initialising the dashboard page objects
     public DashBoardPage() {
 
@@ -92,9 +95,9 @@ public class DashBoardPage extends TestBase {
     }
 
 
-    public AssignLeavePage clickOnLinkAssignLeave() {
+    public ViewEmployeeListPage clickOnLinkPim() {
 
-        linkAssignLeave.click();
-        return new AssignLeavePage();
+        linkPim.click();
+        return new ViewEmployeeListPage();
     }
 }

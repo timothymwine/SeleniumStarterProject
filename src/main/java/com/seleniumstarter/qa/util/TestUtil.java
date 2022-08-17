@@ -1,7 +1,8 @@
 package com.seleniumstarter.qa.util;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -16,14 +17,22 @@ public class TestUtil {
 
     public static Workbook book;
     public static Sheet sheet;
-
     public static long PAGE_LOAD_TIMEOUT = 30;
     public static long IMPLICIT_WAIT = 20;
+    public static String TEST_DATA_SHEET_PATH = "/Users/mwine/workspace/seleniumstarterproject"
+            + "/src/main/resources/com/seleniumstarter/qa/base/testdata.xlsx";
 
     public static Object[][] getTestData( String sheetName ) {
 
-        InputStream file = null;
-        file = TestUtil.class.getResourceAsStream( "testdata.xlsx" );
+        FileInputStream file = null;
+        try {
+
+            file = new FileInputStream( TEST_DATA_SHEET_PATH );
+        }
+        catch ( FileNotFoundException e ) {
+
+            throw new RuntimeException( "file path not found", e );
+        }
         try {
 
             book = WorkbookFactory.create( file );

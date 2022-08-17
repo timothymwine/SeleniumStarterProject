@@ -33,6 +33,7 @@ public class DashBoardPageTest extends TestBase {
         loginPage = new LoginPage();
         dashBoardPage = loginPage.login( prop.getProperty( "username" ), prop.getProperty(
                 "password" ) );
+
     }
 
 
