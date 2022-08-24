@@ -26,13 +26,14 @@ public class DashBoardPageTest extends TestBase {
     }
 
 
+    // CAN'T RUN FDASHBOARD TESTS BECAUSE THE DASHBOARD IS ABSENT FROM THE SOFTWARE BEING TESTEDD
     @BeforeMethod
     public void setUp() {
 
         initialization();
         loginPage = new LoginPage();
-        dashBoardPage = loginPage.login( prop.getProperty( "username" ), prop.getProperty(
-                "password" ) );
+        //dashBoardPage = loginPage.login( prop.getProperty( "username" ), prop.getProperty(
+        //         "password" ) );
 
     }
 

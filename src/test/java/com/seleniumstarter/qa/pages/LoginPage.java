@@ -15,15 +15,15 @@ public class LoginPage extends TestBase {
     // we will use page factory to locate the elements and store them in this OR
 
     //username input field
-    @FindBy( xpath = "//input[contains(@id,'txtUsername')]" )
+    @FindBy( xpath = "//input[@name='username']" )
     WebElement inputUserName;
 
     //password field
-    @FindBy( xpath = "//input[contains(@id,'txtPassword')]" )
+    @FindBy( xpath = "//input[@name='password']" )
     WebElement inputPassword;
 
     //submit/login button
-    @FindBy( xpath = "//input[contains(@id,'btnLogin')]" )
+    @FindBy( xpath = "//button[text()=' Login ']" )
     WebElement btnSubmit;
 
     //page title
@@ -31,7 +31,7 @@ public class LoginPage extends TestBase {
     WebElement title;
 
     //app logo
-    @FindBy( xpath = "//img[contains(@src,'logo.png')]" )
+    @FindBy( xpath = "//div[@class='orangehrm-login-branding']" )
     WebElement orangeLogo;
 
     //initialising the login page objects
@@ -56,11 +56,11 @@ public class LoginPage extends TestBase {
 
 
     //method to login user
-    public DashBoardPage login( String usr, String pssd ) {
+    public ViewEmployeeListPage login( String usr, String pssd ) {
 
         inputUserName.sendKeys( usr );
         inputPassword.sendKeys( pssd );
         btnSubmit.click();
-        return new DashBoardPage();
+        return new ViewEmployeeListPage();
     }
 }

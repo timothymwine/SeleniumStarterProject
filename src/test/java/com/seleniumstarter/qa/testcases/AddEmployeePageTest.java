@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import com.seleniumstarter.qa.base.TestBase;
 import com.seleniumstarter.qa.pages.AddEmployeePage;
-import com.seleniumstarter.qa.pages.DashBoardPage;
 import com.seleniumstarter.qa.pages.LoginPage;
 import com.seleniumstarter.qa.pages.ViewEmployeeListPage;
 import com.seleniumstarter.qa.util.TestUtil;
@@ -21,7 +20,7 @@ public class AddEmployeePageTest extends TestBase {
 
     private LoginPage loginPage;
     private AddEmployeePage addEmployeePage;
-    private DashBoardPage dashBoardPage;
+    private ViewEmployeeListPage dashBoardPage;
     private ViewEmployeeListPage viewEmployeeListPage;
     private String sheetName = "sheet1";
 
@@ -33,7 +32,7 @@ public class AddEmployeePageTest extends TestBase {
 
         dashBoardPage = loginPage.login( prop.getProperty( "username" ), prop.getProperty(
                 "password" ) );
-        viewEmployeeListPage = dashBoardPage.clickOnLinkPim();
+        //viewEmployeeListPage = dashBoardPage.clickOnLinkPim();
         addEmployeePage = new AddEmployeePage();
         addEmployeePage = viewEmployeeListPage.clickLinkAddEmployeeBtn();
     }

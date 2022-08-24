@@ -12,10 +12,10 @@ import com.seleniumstarter.qa.base.TestBase;
  */
 public class ViewEmployeeListPage extends TestBase {
 
-    @FindBy( id = "menu_pim_viewPimModule" )
+    @FindBy( xpath = "//a[contains(@href,'viewPimModule')]" )
     WebElement linkPimBtn;
 
-    @FindBy( id = "menu_pim_addEmployee" )
+    @FindBy( xpath = "//a[text()='Add Employee']" )
     WebElement linkAddEmployeeBtn;
 
     public ViewEmployeeListPage() {

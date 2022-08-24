@@ -6,8 +6,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.seleniumstarter.qa.base.TestBase;
-import com.seleniumstarter.qa.pages.DashBoardPage;
 import com.seleniumstarter.qa.pages.LoginPage;
+import com.seleniumstarter.qa.pages.ViewEmployeeListPage;
 
 /**
  * @author Timothy Mwine
@@ -16,7 +16,7 @@ import com.seleniumstarter.qa.pages.LoginPage;
 public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;
-    private DashBoardPage dashBoardPage;
+    private ViewEmployeeListPage viewEmployeeListPage;
 
     public LoginPageTest() {
 
@@ -44,7 +44,8 @@ public class LoginPageTest extends TestBase {
     public void orangeLogoTest() {
 
         boolean orangelogo = loginPage.validateOrangeLogo();
-        Assert.assertTrue( orangelogo );
+        Assert.assertTrue( orangelogo,
+                "Logo test failed because logo is not displayed in the test" );
     }
 
 
@@ -53,7 +54,7 @@ public class LoginPageTest extends TestBase {
 
         String username = prop.getProperty( "username" );
         String password = prop.getProperty( "password" );
-        dashBoardPage = loginPage.login( username, password );
+        viewEmployeeListPage = loginPage.login( username, password );
     }
 
 
